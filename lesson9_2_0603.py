@@ -1,5 +1,5 @@
-import numpy as np #numpy語法
-import pandas as pd
+import numpy as np #numpy語法 #np=小名><
+import pandas as pd #pandas語法 #pd=小名><
 
 scores_array = np.random.randint(50,high=101,size=(50,5)) #numpy語法，最低50最高100，50列5欄
 
