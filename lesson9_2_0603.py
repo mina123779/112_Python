@@ -9,8 +9,8 @@ student_dataFrame = pd.DataFrame(data=scores_array, #pandas語法DataFrame
              index=range(1,51))
 
 
-st.header("3年5班成績表")  #st.=streamlit語法
+st.header("X年X班成績表")  #st.=streamlit語法
 #st.table(data=student_dataFrame)  #st.=streamlit語法  #網頁不可下拉
 st.dataframe(data=student_dataFrame)  #st.=streamlit語法 #網頁可下拉
 
-#終端機輸入Streamlit run lesson9_1_0603.py(檔名)讓他跑
+#終端機輸入Streamlit run lesson9_1_0603.py(檔名)讓他跑 #改內容網頁重新整理就可以了
