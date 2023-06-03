@@ -18,14 +18,14 @@ dataFrame = pd.DataFrame(data=all_data,columns=['sna','tot','sbi','sarea','mday'
 dataFrame.columns = ["站點名稱","車數","可借","行政區","時間","地址","可還","狀態"]
 dataFrame1 = dataFrame.set_index("站點名稱")
 
-min,max = st.slider( #streamlit語法:選擇橫拉
+min,max = st.slider(  #streamlit語法:選擇橫拉
     '請選擇可借的(<=數量)',
     0, 100, (5, 100))
 
 mask = dataFrame1['可借'] <= max
 
 mask_dataFrame = dataFrame1[mask]
-count = mask_dataFrame["車數"].count() #符合條件的車數
+count = mask_dataFrame["車數"].count() #pandas語法dataframe #符合條件的車數
 st.write("符合條件的站點數:",count)
 
 st.dataframe(mask_dataFrame)
