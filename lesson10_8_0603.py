@@ -24,7 +24,7 @@ areas = group_data.index.to_numpy().tolist()
 min,max = st.slider(
     '請選擇可借的(<=數量)',
     0, 100, (0, 100))
-mask = (dataFrame1['可借'] <= max) & (dataFrame1['可借'] >= min)
+mask = (dataFrame1['可借'] <= max) & (dataFrame1['可借'] >= min) #max、min變數要跟上面一致
 mask_dataFrame = dataFrame1[mask]
 count = mask_dataFrame["車數"].count()
 st.write("符合條件的站點數:",count)
