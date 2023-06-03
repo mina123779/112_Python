@@ -22,7 +22,7 @@ min,max = st.slider(  #streamlit語法:選擇橫拉
     '請選擇可借的(<=數量)',
     0, 100, (5, 100))
 
-mask = (dataFrame1['可借'] <= max) & (dataFrame1['可借'] >= min) #變數一致
+mask = (dataFrame1['可借'] <= max) & (dataFrame1['可借'] >= min) #max、min變數一致
 
 mask_dataFrame = dataFrame1[mask]
 count = mask_dataFrame["車數"].count() #pandas語法dataframe #符合條件的車數
