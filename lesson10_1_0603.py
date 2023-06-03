@@ -1,6 +1,9 @@
-import streamlit as st 
+import streamlit as st
 
-if st.button('Say hello',key="myButton"): #mybutton=false #程式都是從上而下讀一次的
-    st.write('Why hello there')
+def button_click():
+    st.write(st.session_state)
+
+if st.button("say Hello!",key='myButton',on_click=button_click): #myButton=False #程式都是從上而下讀一次的
+    st.write("Why hello there")
 else:
-    st.write('Goodbye')
+    st.write("Goodbye")
