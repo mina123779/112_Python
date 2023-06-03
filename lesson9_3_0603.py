@@ -1,3 +1,3 @@
 import streamlit as st #streamlit 語法
 
-st.metric(label="Temperature", value="70 °F", delta="1.2 °F") #streamlit st.metric 語法
+st.metric(label="Taiwan Temperature", value="32°C", delta="+2°C") #streamlit st.metric 語法
