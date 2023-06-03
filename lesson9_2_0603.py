@@ -7,5 +7,5 @@ student_dataFrame = pd.DataFrame(data=scores_array, #pandas語法DataFrame
              columns=["國文","英文","數學","地理","社會"],
              index=range(1,51))
 
-print(student_dataFrame) #須加上print讓他列印出來
+print(student_dataFrame) #須加上print讓他顯示出來
 
