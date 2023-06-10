@@ -1,13 +1,23 @@
 import streamlit as st
 import pandas as pd
+import yfinance as yf
 
 codeFrame = pd.read_csv('codeSearch.csv',usecols=['code','name'])
 codeSeries = codeFrame['code'].astype(str) + codeFrame['name']
 
 with st.sidebar:
     selected_codes = st.multiselect("請選擇股票:",codeSeries,
-                                    max_selections=4)   #最多可以選擇4個
+                                    max_selections=4) #最多選擇4個
+    
+@st.cache_data
+def fetch_stock_dataFrame(id):
+    stock_dataFrame = yf.download(id,start='2022-01-01')
+    return stock_dataFrame
 
 for code in selected_codes:
-    code = code[:4]+'.TW'  #code[:4]選擇CODE前4碼
-    st.write(code)
+    code1 = code[:4]+'.TW' #顯示前4個code
+    code_stock_dataFrame = fetch_stock_dataFrame(code1)
+    code_stock_dataFrame_sorted = code_stock_dataFrame.sort_index(ascending=False) #sort_index(ascending=False) false=排序由新到舊 true相反
+    st.subheader(code)
+    st.dataframe(code_stock_dataFrame_sorted,width=1024)
+    st.divider()
